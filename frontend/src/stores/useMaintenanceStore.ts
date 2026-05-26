@@ -42,16 +42,13 @@ const mockWorkOrders: WorkOrder[] = [
     description: 'Hydraulic fluid pooling near the base of Press 3.',
     equipmentId: 'eq-303',
     equipmentName: 'Hydraulic Press 3',
-    status: 'critical' as any, // wait, critical is a priority, not status. Let's fix this below.
+    status: 'pending',
     priority: 'critical',
     assignedTo: 'Mike Ross',
     dueDate: new Date(Date.now() + 3600000 * 4).toISOString(),
     createdAt: new Date().toISOString(),
   }
 ];
-
-// Correct the status in mock data
-mockWorkOrders[2].status = 'pending';
 
 const mockEquipmentHealth: EquipmentHealth[] = [
   {

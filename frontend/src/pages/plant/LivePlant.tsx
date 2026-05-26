@@ -162,7 +162,7 @@ export default function LivePlant() {
 
       {activeTab === '3d' ? (
         <div className="mt-2 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <Boiler3D telemetryData={telemetryData?.data || []} />
+          <Boiler3D telemetryData={(telemetryData?.data || []).map(d => ({ ...d, unit: d.unit || undefined }))} />
         </div>
       ) : (
         <>
